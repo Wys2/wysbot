@@ -11,9 +11,12 @@ client.on('message', message =>{
 });
 client.on('message', message =>{
     if(message.content === "!help"){
-        message.reply('Liste des commandes : !ban, bannir un membre (permissions requises) !ping, Pong !  !help, afficher ce menu ');
+        message.reply('Liste des commandes : !ban, bannir un membre (permissions requises) !ping, Pong !  !help, afficher ce menu !invite, inviter WysBot dans votre serveur. !kick, kicker quelqun du serveur (permissions requises)');
     }
 });
+client.on('message', message =>{
+    if(message.content === "!invite"){
+        message.reply('Voici le lien d invitation: https://discordapp.com/oauth2/authorize?client_id=554645826148761605&scope=bot&permissions=8');
 
 
 
