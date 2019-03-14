@@ -11,10 +11,7 @@ client.on('message', message =>{
 });
 client.on('message', message =>{
     if(message.content === "!help"){
-        message.reply('Liste des commandes :');
-        message.reply('!ban, bannir un membre (permissions requises)');
-        message.reply('!ping, Pong !');
-        message.reply('!help, afficher ce menu');
+        message.reply('Liste des commandes : !ban, bannir un membre (permissions requises) !ping, Pong !  !help, afficher ce menu ');
     }
 });
 
