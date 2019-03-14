@@ -39,7 +39,7 @@ client.on('message',message =>{
        let member = message.mentions.members.first()
        if (!member) return message.channel.send("Veuillez mentionner un utilisateur :x:")
        if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.owner.id) return message.channel.send("Vous ne pouvez pas kick cet utilisateur :x:")
-       if (!member.kickable) return message.channel.send("Je ne peux pas exclure cet utilisateur :sunglass:")
+       if (!member.kickable) return message.channel.send("Je ne peux pas exclure cet utilisateur :sunglasses:")
        member.kick()
        message.channel.send("**"+member.user.username + '** a été exclu :white_check_mark:')
     }
