@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 var prefix = "!";
 client.on('message', message =>{
-    if(message.content === "Ping"){
+    if(message.content === "!Ping"){
         message.reply('Pong ! :heart:');
     }
 });
@@ -16,7 +16,7 @@ client.on("ready", () => {
 
   console.log(`Le bot à démaré avec ${client.users.size} utilisateurs, dans ${client.channels.size} salons de ${client.guilds.size} guilds.`); 
 
-  client.user.setActivity(`Sur ${client.guilds.size} servers !`);
+  client.user.setActivity(`Sur ${client.guilds.size} servers ! !help`);
 });
 
 client.on("guildCreate", guild => {
