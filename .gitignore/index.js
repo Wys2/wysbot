@@ -3,19 +3,19 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 
-var prefix = "!";
+var prefix = ".";
 client.on('message', message =>{
-    if(message.content === "!ping"){
+    if(message.content === ".ping"){
         message.reply('Pong ! :heart:');
     }
 });
 client.on('message', message =>{
-    if(message.content === "!help"){
-        message.reply('Liste des commandes : !ban, bannir un membre (permissions requises) !ping, Pong !  !help, afficher ce menu !invite, inviter WysBot dans votre serveur. !kick, kicker quelqun du serveur (permissions requises)');
+    if(message.content === ".help"){
+        message.reply('Liste des commandes : .ban, bannir un membre (permissions requises) .ping, Pong !  .help, afficher ce menu .invite, inviter WysBot dans votre serveur. .kick, kicker quelqun du serveur (permissions requises)');
     }
 });
 client.on('message', message =>{
-    if(message.content === "!invite"){
+    if(message.content === ".invite"){
         message.reply('Voici le lien d invitation: https://discordapp.com/oauth2/authorize?client_id=554645826148761605&scope=bot&permissions=8');
 }
 });
@@ -24,7 +24,7 @@ client.on("ready", () => {
 
   console.log(`Le bot à démaré avec ${client.users.size} utilisateurs, dans ${client.channels.size} salons de ${client.guilds.size} guilds.`); 
 
-  client.user.setActivity(`Sur ${client.guilds.size} servers ! !help`);
+  client.user.setActivity(`Sur ${client.guilds.size} servers ! .help`);
 });
 
 client.on("guildCreate", guild => {
