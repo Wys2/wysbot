@@ -6,7 +6,7 @@ const warns = JSON.parse(fs.readFileSync('./warns.json'))
 
 var prefix = "!";
 client.on('message', message =>{
-    if(message.content === "!Ping"){
+    if(message.content === "!ping"){
         message.reply('Pong ! :heart:');
     }
 });
