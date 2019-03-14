@@ -26,4 +26,4 @@ client.on("guildDelete", guild => {
 
 
 
-client.login("NTU0NjQ1ODI2MTQ4NzYxNjA1.D2lspA.f1GA1FcdqiRLebT39h1Rpj3SmBI");
+client.login(process.env.TOKEN);
