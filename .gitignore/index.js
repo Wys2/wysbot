@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
 
 const client = new Discord.Client();
-var randomnum = 0;
 var prefix = ".";
 client.on('message', message =>{
     if(message.content === ".ping"){
@@ -69,30 +68,7 @@ client.on('message',message =>{
     }
 });
 
-client.on('message', message =>{
-    if(message.content === ".licorne"){
-        if(randomnum == 1){
-             message.reply('Questce qui est jaune et qui attend ?');
-        }
-        if(randomnum == 2){
-             message.reply('Blague 2');
-        }
-        if(randomnum == 3){
-             message.reply('Blague 3');
-        }
-        if(randomnum == 4){
-             message.reply('Blague 4');
-        }
-        if(randomnum == 5){
-             message.reply('Blague 5');
-        }
-    }
-        
-function random(min, max) {
-    min = Math.floor(0);
-    max = Math.ceil(5);
-    randomnum = Math.floor(Math.random() * (max - min +1)+ min);
-}
+
 
  
 client.login(process.env.TOKEN);
