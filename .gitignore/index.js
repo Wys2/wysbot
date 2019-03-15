@@ -11,7 +11,7 @@ client.on('message', message =>{
 });
 client.on('message', message =>{
     if(message.content === ".ping"){
-  message.reply(`Pong!`);  
+  message.reply('Pong!');  
   }
 }
 client.on('message', message =>{
