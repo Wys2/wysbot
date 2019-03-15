@@ -11,8 +11,7 @@ client.on('message', message =>{
 });
 client.on('message', message =>{
     if(message.content === ".ping"){
-  message.reply(`Pong! La latence est de ${m.createdTimestamp - message.createdTimestamp}ms. Latence de l'API ${Math.round(client.ping)}ms`);
-   
+  message.reply(`Pong!`);  
   }
 }
 client.on('message', message =>{
