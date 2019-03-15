@@ -13,7 +13,7 @@ client.on("message", message => {
         let count = args[1]
         if (!count) return message.channel.send("Veuillez indiquer un nombre de messages à supprimer ! :x:")
         if (isNaN(count)) return message.channel.send("Veuillez indiquer un nombre valide ! :x: ")
-        if (count < 1 || count > 1000) return message.channel.send("Veuillez indiquer un nombre entre 1 et 1000 ! :x:")
+        if (count < 1 || count > 100) return message.channel.send("Veuillez indiquer un nombre entre 1 et 100 ! :x:")
         message.channel.bulkDelete(parseInt(count) + 1)
     }
  
