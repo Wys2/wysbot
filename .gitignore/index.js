@@ -4,6 +4,44 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = ".";
 
+lient.on("message", message => {
+    if (!message.guild) return
+    let args = message.content.trim().split(/ +/g)
+ 
+    if (args[0].toLowerCase() === prefix + "clear") {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande :x:")
+        let count = args[1]
+        if (!count) return message.channel.send("Veuillez indiquer un nombre de messages à supprimer ! :x:")
+        if (isNaN(count)) return message.channel.send("Veuillez indiquer un nombre valide ! :x: ")
+        if (count < 1 || count > 1000) return message.channel.send("Veuillez indiquer un nombre entre 1 et 1000 ! :x:")
+        message.channel.bulkDelete(parseInt(count) + 1)
+    }
+ 
+    if (args[0].toLowerCase() === prefix + "mute") {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande :x:")
+        let member = message.mentions.members.first()
+        if (!member) return message.channel.send("Membre introuvable")
+        if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("Vous ne pouvez pas mute ce membre")
+        if (member.highestRole.calculatedPosition >= message.guild.me.highestRole.calculatedPosition || member.id === message.guild.ownerID) return message.channel.send("Je ne peux pas mute ce membre")
+        let muterole = message.guild.roles.find(role => role.name === 'Muted')
+        if (muterole) {
+            member.addRole(muterole)
+            message.channel.send(member + ' a été mute :white_check_mark:')
+        }
+        else {
+            message.guild.createRole({name: 'Muted', permissions: 0}).then((role) => {
+                message.guild.channels.filter(channel => channel.type === 'text').forEach(channel => {
+                    channel.overwritePermissions(role, {
+                        SEND_MESSAGES: false
+                    })
+                })
+                member.addRole(role)
+                message.channel.send(member + ' a été mute :white_check_mark:')
+            })
+        }
+    }
+})
+
 client.on('message', message =>{
     if(message.content === ".help"){
         message.reply('Liste des commandes : .ban, bannir un membre (permissions requises) .ping, Pong !  .help, afficher ce menu .invite, inviter WysBot dans votre serveur. .kick, kicker quelqun du serveur (permissions requises)');
