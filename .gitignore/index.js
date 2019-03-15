@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = ".";
 
-lient.on("message", message => {
+client.on("message", message => {
     if (!message.guild) return
     let args = message.content.trim().split(/ +/g)
  
@@ -61,14 +61,14 @@ client.on('message', message =>{
 
 client.on("ready", () => {
 
-  console.log(`Le bot à démaré avec ${client.users.size} utilisateurs, dans ${client.channels.size} salons de ${client.guilds.size} guilds.`); 
+console.log('Bot activated !')
 
   client.user.setActivity(`Sur ${client.guilds.size} servers !  .help`);
 });
 
 client.on("guildCreate", guild => {
 
-  console.log(`Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!`);
+  console.log('Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!');
   client.user.setActivity(`Sur ${client.guilds.size} servers ! `);
 });
 
