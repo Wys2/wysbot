@@ -12,8 +12,9 @@ client.on('message', message =>{
 client.on('message', message =>{
     if(message.content === ".ping"){
   message.reply('Pong!');  
-  }
+        
 }
+});
 client.on('message', message =>{
     if(message.content === ".invite"){
         message.reply('Voici le lien d invitation: https://discordapp.com/oauth2/authorize?client_id=554645826148761605&scope=bot&permissions=8');
