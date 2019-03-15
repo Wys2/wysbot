@@ -63,7 +63,7 @@ client.on("ready", () => {
 
   console.log(`Le bot à démaré avec ${client.users.size} utilisateurs, dans ${client.channels.size} salons de ${client.guilds.size} guilds.`); 
 
-  client.user.setActivity(`Sur ${client.guilds.size} servers ! .help`);
+  client.user.setActivity(`Sur ${client.guilds.size} servers !  .help`);
 });
 
 client.on("guildCreate", guild => {
