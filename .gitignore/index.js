@@ -11,10 +11,10 @@ client.on('message', message =>{
 });
 client.on('message', message =>{
     if(message.content === ".ping"){
-  
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  message.reply(`Pong! La latence est de ${m.createdTimestamp - message.createdTimestamp}ms. Latence de l'API ${Math.round(client.ping)}ms`);
+   
   }
+}
 client.on('message', message =>{
     if(message.content === ".invite"){
         message.reply('Voici le lien d invitation: https://discordapp.com/oauth2/authorize?client_id=554645826148761605&scope=bot&permissions=8');
