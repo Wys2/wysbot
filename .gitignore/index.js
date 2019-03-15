@@ -3,16 +3,18 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 var prefix = ".";
-client.on('message', message =>{
-    if(message.content === ".ping"){
-        message.reply('Pong ! :heart:');
-    }
-});
+
 client.on('message', message =>{
     if(message.content === ".help"){
         message.reply('Liste des commandes : .ban, bannir un membre (permissions requises) .ping, Pong !  .help, afficher ce menu .invite, inviter WysBot dans votre serveur. .kick, kicker quelqun du serveur (permissions requises)');
     }
 });
+client.on('message', message =>{
+    if(message.content === ".ping"){
+  
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }
 client.on('message', message =>{
     if(message.content === ".invite"){
         message.reply('Voici le lien d invitation: https://discordapp.com/oauth2/authorize?client_id=554645826148761605&scope=bot&permissions=8');
