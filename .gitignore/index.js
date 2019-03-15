@@ -107,6 +107,25 @@ client.on('message',message =>{
        message.channel.send("**"+member.user.username + '** a été banni :white_check_mark:')
     }
 });
+client.on('message',message => {
+    if (!message.guild) return
+    let args = message.content.trim().split(/ +/g)
+ 
+   
+    if (args[0].toLocaleLowerCase() === prefix + '8ball'){
+        if (!args[0]) return message.channel.send("Veuillez **poser une question** :x:")
+        let rep = ["Non :x:", "J'ai envie de dormir :zzz:", "Balec :face_palm:", "Peut être... :thinking:", "Absolument :interrobang:"];
+        let reptaille = Math.floor((Math.random() * rep.length));
+        let question = args.slice(0).join(" ");
+ 
+        let embed = new Discord.RichEmbed()
+            .setAuthor(message.author.tag)
+            .setColor("ORANGE")
+            .addField("Question:", question)
+            .addField("Réponse:", rep[reptaille]);
+        message.channel.send(embed)
+    }
+})
 
 
 
