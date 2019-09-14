@@ -61,7 +61,7 @@ client.on('message', message =>{
 
 client.on("ready", () => {
 
-console.log('Bot activated !')
+console.log('|FR| WysBot V 1.4 Activé. Fait par Wys. |EN| WysBot V 1.4 activated. Made by Wys')
 
   client.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
