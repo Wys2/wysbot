@@ -75,12 +75,23 @@ url: "https://www.twitch.tv/wysytb
 client.on("guildCreate", guild => {
 
   console.log('Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!');
+bot.user.setActivity(`WysBot V 1.4 By Wys
+type: "STREAMING",
+url: "https://www.twitch.tv/wysytb
+    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
+    .catch(console.error);
  
 });
 
 client.on("guildDelete", guild => {
 
   console.log(`J'ai été enlevé de : ${guild.name} (id: ${guild.id})`);
+    
+  bot.user.setActivity(`WysBot V 1.4 By Wys
+type: "STREAMING",
+url: "https://www.twitch.tv/wysytb
+    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
+    .catch(console.error);
 
 });
 
