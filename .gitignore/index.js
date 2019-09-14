@@ -63,7 +63,7 @@ client.on("ready", () => {
 
 console.log('Bot activated !')
 
-  client.user.setActivity(`Sur ${client.guilds.size} servers !  .help`);
+  client.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
 
 client.on("guildCreate", guild => {
