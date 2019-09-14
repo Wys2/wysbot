@@ -63,19 +63,19 @@ client.on("ready", () => {
 
 console.log('|FR| WysBot V 1.4 Activé. Fait par Wys. |EN| WysBot V 1.4 activated. Made by Wys')
 
-  client.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+  client.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
 
 client.on("guildCreate", guild => {
 
   console.log('Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!');
-  client.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+  client.user.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
 
 client.on("guildDelete", guild => {
 
   console.log(`J'ai été enlevé de : ${guild.name} (id: ${guild.id})`);
-bot.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+bot.user.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
 
 client.on('message',message =>{
