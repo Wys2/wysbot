@@ -75,7 +75,7 @@ client.on("guildCreate", guild => {
 client.on("guildDelete", guild => {
 
   console.log(`J'ai été enlevé de : ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Sur ${client.guilds.size} servers !`);
+bot.user.setPresence({ game: { name: 'Sur ${client.guilds.size} servers !`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
 });
 client.on('message',message =>{
     if (!message.guild) return
