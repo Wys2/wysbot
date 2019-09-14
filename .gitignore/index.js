@@ -63,19 +63,27 @@ client.on("ready", () => {
 
 console.log('|FR| WysBot V 1.4 Activé. Fait par Wys. |EN| WysBot V 1.4 activated. Made by Wys')
 
-  client.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+    bot.user.setStatus('Online')
+    client.user.setActivity(`WysBot V 1.4 By Wys
+type: "STREAMING",
+url: "https://www.twitch.tv/wysytb
+    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
+    .catch(console.error);
+});
+
+client.login('TOKEN');
 });
 
 client.on("guildCreate", guild => {
 
   console.log('Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!');
-  client.user.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+ 
 });
 
 client.on("guildDelete", guild => {
 
   console.log(`J'ai été enlevé de : ${guild.name} (id: ${guild.id})`);
-bot.user.user.setPresence({ stream: { game: 'https://discord.gg/t4mHpNn`', type: "streaming", url: "https://discord.gg/t4mHpNn"}});
+
 });
 
 client.on('message',message =>{
