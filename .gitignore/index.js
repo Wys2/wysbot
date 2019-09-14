@@ -66,7 +66,7 @@ console.log('|FR| WysBot V 1.4 Activé. Fait par Wys. |EN| WysBot V 1.4 activate
     bot.user.setStatus('Online')
     client.user.setActivity(`WysBot V 1.4 By Wys`)
 type: "STREAMING",
-url:"https://www.twitch.tv/wysytb
+url: "https://www.twitch.tv/wysytb"
     .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
     .catch(console.error);
 });
@@ -77,7 +77,7 @@ client.on("guildCreate", guild => {
   console.log('Nouvelle guild : ${guild.name} (id: ${guild.id}).Cette guilde a ${guild.memberCount} membres!');
 bot.user.setActivity(`WysBot V 1.4 By Wys`)
 type: "STREAMING",
-url:"https://www.twitch.tv/wysytb
+url: "https://www.twitch.tv/wysytb"
     .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
     .catch(console.error);
  
@@ -89,7 +89,7 @@ client.on("guildDelete", guild => {
     
   bot.user.setActivity(`WysBot V 1.4 By Wys`)
 type: "STREAMING",
-url:"https://www.twitch.tv/wysytb
+url: "https://www.twitch.tv/wysytb"
     .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
     .catch(console.error);
 
