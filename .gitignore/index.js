@@ -71,8 +71,6 @@ url: "https://www.twitch.tv/wysytb
     .catch(console.error);
 });
 
-client.login('TOKEN');
-});
 
 client.on("guildCreate", guild => {
 
