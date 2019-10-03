@@ -88,11 +88,6 @@ client.on("guildDelete", guild => {
   console.log(`J'ai été enlevé de : ${guild.name} (id: ${guild.id})`);
     
   bot.user.setActivity(`WysBot V 1.4 By Wys`)
-type: "STREAMING",
-url: "https://www.twitch.tv/wysytb"
-    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
-    .catch(console.error);
-
 });
 
 client.on('message',message =>{
@@ -145,7 +140,24 @@ client.on('message',message => {
     }
 })
 
+clientDiscord.on('messageReactionAdd', (reaction, user) => {
+    if(reaction.emoji.name === ":denyStaff:")
+        clientDiscord.channels.get("620566612155826176").send('Réaction :denyStaff: Détéctée');
+});
 
+clientDiscord.on('messageReactionAdd', (reaction, user) => {
+    if(reaction.emoji.name === ":acceptStaff:")
+        clientDiscord.channels.get("620566612155826176").send('Réaction :denyStaff: Détéctée');
+});
 
+clientDiscord.on('messageReactionAdd', (reaction, user) => {
+    if(reaction.emoji.name === ":waitStaff:")
+        clientDiscord.channels.get("620566612155826176").send('Réaction :denyStaff: Détéctée');
+});
+
+clientDiscord.on('messageReactionAdd', (reaction, user) => {
+    if(reaction.emoji.name === ":takeStaff:")
+        clientDiscord.channels.get("620566612155826176").send('Réaction :denyStaff: Détéctée');
+});
  
 client.login(process.env.TOKEN);
